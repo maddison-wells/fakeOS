@@ -1,0 +1,76 @@
+.iphone {
+  background-color: white;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+  border: 8px solid black;
+  border-radius: 40px;
+  box-sizing: border-box;
+
+  &__speaker {
+    position: absolute;
+    top: 0;
+    z-index: 100;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 24px;
+    width: 100px;
+    background-color: #000;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    &--rounded {
+      position: relative;
+    }
+    &--rounded::before {
+      content: "";
+      position: absolute;
+      left: -20px;
+      /* background-color: #e2b64f; */
+      top: 0;
+      height: 20px;
+      width: 20px;
+      z-index: 1;
+      border-top-right-radius: 4px;
+      box-sizing: border-box;
+      box-shadow: 1px -10px 0px 0px #000;
+    }
+  }
+
+  &__speaker::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 7px;
+    height: 4px;
+    width: 30px;
+    border-radius: 10px;
+    border: 0.03em solid rgb(51, 51, 51, 0.479);
+    box-shadow: inset 0px 0px 3px 0px rgb(51, 51, 51, 0.712);
+  }
+
+  &__speaker::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    height: 7px;
+    width: 7px;
+    border-radius: 50%;
+    background-color: #333;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: end;
+    margin-right: 25px;
+    &--right {
+      margin-top: 5px;
+      .nav-icon {
+        color: #686363;
+        font-size: 17px;
+      }
+    }
+  }
+}
