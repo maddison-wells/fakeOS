@@ -1,3 +1,11 @@
+@import "partials/_main.scss";
+@import "partials/firstPage";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 .iphone {
   background-color: white;
   height: 600px;
@@ -7,6 +15,8 @@
   border: 8px solid black;
   border-radius: 40px;
   box-sizing: border-box;
+  background-image: url("img/iphone background.jpeg");
+  background-size: cover;
 
   &__speaker {
     position: absolute;
@@ -63,14 +73,26 @@
 
   &__nav {
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    margin-left: 25px;
     margin-right: 25px;
+    color: #fff;
     &--right {
-      margin-top: 5px;
+      display: flex;
+
       .nav-icon {
-        color: #686363;
         font-size: 17px;
+        margin-top: 10px;
+        margin-right: 5px;
       }
+    }
+
+    &--left {
+      margin-top: -5px;
+    }
+
+    &--left p {
+      font-size: 15px;
     }
   }
 }

@@ -1,0 +1,63 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  height: 450px;
+
+  &__lockscreen {
+    &--date {
+      font-weight: 300;
+      font-size: 16px;
+      margin-bottom: 0px;
+    }
+
+    &--time {
+      font-weight: 600;
+      font-size: 60px;
+      margin: 0px;
+      font-family: "Poppins", sans-serif;
+    }
+  }
+}
+
+.clickOpen {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 200;
+  margin-top: 280px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+
+  &__lockscreen {
+    opacity: 0.5;
+
+    &--apps {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--appsIcon {
+      opacity: 1;
+      color: #fff;
+      font-size: 30px;
+      padding: 10px;
+      border-radius: 50px;
+      background-color: rgba(93, 88, 88, 0.7);
+      margin: 0px 55px 40px 55px;
+    }
+  }
+}
+
+.torch {
+  transform: rotate(-45deg);
+}
+
+.unlock {
+  display: none;
+}

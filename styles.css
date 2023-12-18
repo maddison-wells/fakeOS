@@ -1,3 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap");
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  height: 450px;
+}
+.main__lockscreen--date {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+.main__lockscreen--time {
+  font-weight: 600;
+  font-size: 60px;
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+.clickOpen {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: 200;
+  margin-top: 280px;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+.footer__lockscreen {
+  opacity: 0.5;
+}
+.footer__lockscreen--apps {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__lockscreen--appsIcon {
+  opacity: 1;
+  color: #fff;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: rgba(93, 88, 88, 0.7);
+  margin: 0px 55px 40px 55px;
+}
+
+.torch {
+  transform: rotate(-45deg);
+}
+
+.unlock {
+  display: none;
+}
+
+.firstPage {
+  display: flex;
+  justify-content: space-between;
+}
+.firstPage__apps {
+  flex-direction: column;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 .iphone {
   background-color: white;
   height: 600px;
@@ -7,6 +77,8 @@
   border: 8px solid black;
   border-radius: 40px;
   box-sizing: border-box;
+  background-image: url("img/iphone background.jpeg");
+  background-size: cover;
 }
 .iphone__speaker {
   position: absolute;
@@ -59,13 +131,22 @@
 }
 .iphone__nav {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
+  margin-left: 25px;
   margin-right: 25px;
+  color: #fff;
 }
 .iphone__nav--right {
-  margin-top: 5px;
+  display: flex;
 }
 .iphone__nav--right .nav-icon {
-  color: #686363;
   font-size: 17px;
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.iphone__nav--left {
+  margin-top: -5px;
+}
+.iphone__nav--left p {
+  font-size: 15px;
 }
