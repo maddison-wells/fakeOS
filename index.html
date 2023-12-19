@@ -35,7 +35,7 @@
             <ion-icon class="nav-icon" name="battery-half"></ion-icon>
           </div>
         </div>
-        <div class="main" id="onClick">
+        <div class="main" id="lockScreen">
           <div class="main__lock">
             <ion-icon name="lock-closed"></ion-icon>
           </div>
@@ -58,38 +58,82 @@
           </div>
         </div>
  
-      <div class="firstPage">
+      <div class="firstPage hide" id="firstPage11111">
         <div class="firstPage__apps">
           <div class="firstPage__apps--card">
-           <i class="fa-solid fa-comment messages">Messages</i></div>
+           <ion-icon class="app messages" name="chatbubble"></ion-icon><p>Messages</p></div>
            <div class="firstPage__apps--card">
-          <i class="fa-solid fa-camera camera">Camera</i></div>
+          <ion-icon class="app camera" name="camera"></ion-icon><p>Camera</p></div>
           <div class="firstPage__apps--card">
-          <p><ion-icon class="settings" name="cog-outline"></ion-icon>Settings</p></div>
+          <ion-icon class="settings app" name="cog-outline"></ion-icon><p>Settings</p></div><div class="firstPage__apps--card">
+          <ion-icon class ="calendar app" name="calendar-number-outline"></ion-icon><p>Calendar</p></div>
           <div class="firstPage__apps--card">
-          <p><ion-icon class="facebook" name="logo-facebook"></ion-icon>Facebook</p></div>
+          <ion-icon class="calculator app" name="calculator"></ion-icon><p>Calculator</p></div>
           <div class="firstPage__apps--card">
-          <p><ion-icon class ="snapchat" name="logo-snapchat"></ion-icon>Snapchat</p></div>
+          <ion-icon class="facebook app" name="logo-facebook"></ion-icon><p>Facebook</p></div>
           <div class="firstPage__apps--card">
-          <p><ion-icon class ="calendar" name="calendar-number-outline"></ion-icon>Calendar</p></div>
+          <ion-icon class ="snapchat app" name="logo-snapchat"></ion-icon><p>Snapchat</p></div>
           <div class="firstPage__apps--card">
-          <i class="fa-brands fa-app-store-ios">App Store</i></div>
+         <ion-icon class="app appStore" name="logo-apple-appstore"></ion-icon><p>App Store</p></div>
+          
           <div class="firstPage__apps--card">
-          <p><ion-icon name="logo-google"></ion-icon>Google</p></div>
+          <ion-icon class="email app" name="mail-outline"></ion-icon></i><p>Email</p></div>
           <div class="firstPage__apps--card">
-          <p><ion-icon name="camera"></ion-icon>Camera</p></div>
+          <ion-icon class="books app" name="book"></ion-icon><p>Books</p></div>
           <div class="firstPage__apps--card">
-          <p><ion-icon name="calculator"></ion-icon>Calculator</p></div>
+         <ion-icon class="reddit app" name="logo-reddit"></ion-icon><p>Reddit</p></div>
           <div class="firstPage__apps--card">
-          <i class="fa-regular fa-envelope">Email</i></div>
+          <ion-icon class="clock app" name="time"></ion-icon><p>Clock</p></div>
+        </div>
+        <div class="pageToggle"> 
+          <div class="pageToggle__circle active" id="pageOne"></div>
+          <div class="pageToggle__circle" id="pageTwo"></div>
+        </div>
+        <div class="firstPage__footer">
           <div class="firstPage__apps--card">
-          <i class="fa-solid fa-book-open">Books</i></div>
+          <ion-icon class="phone app" name="call"></ion-icon><p></p></div>
           <div class="firstPage__apps--card">
-          <i class="fa-brands fa-reddit-alien">Reddit</i></div>
+          <ion-icon class="google app" name="logo-google"></ion-icon><p></p></div>
           <div class="firstPage__apps--card">
-          <i class="fa-solid fa-clock">Clock</i></div>
+          <ion-icon class="insta app" name="logo-instagram"></ion-icon><p></p></div>
           <div class="firstPage__apps--card">
-          <i class="fa-brands fa-spotify">Spotify</i></div>
+          <ion-icon class="itunes app" name="musical-notes"></ion-icon><p></p></div>
+
+        </div>
+      </div>
+      <div class="secondPage" id="secondPage">
+        <div class="secondPage__apps">
+          <div class="secondPage__apps--card">
+           <ion-icon class="app pintrest" name="logo-pinterest"></ion-icon><p>Pinterest</p></div>
+           <div class="secondPage__apps--card">
+          <ion-icon class="app whatsapp" name="logo-whatsapp"></ion-icon><p>WhatsApp</p></div>
+          <div class="secondPage__apps--card">
+          <ion-icon class="settings app" name="cog-outline"></ion-icon><p>Settings</p></div><div class="secondPage__apps--card">
+          <ion-icon class ="calendar app" name="calendar-number-outline"></ion-icon><p>Calendar</p></div>
+          <div class="secondPage__apps--card">
+          <ion-icon class="calculator app" name="calculator"></ion-icon><p>Calculator</p></div>
+          <div class="secondPage__apps--card">
+          <ion-icon class="facebook app" name="logo-facebook"></ion-icon><p>Facebook</p></div>
+          <div class="secondPage__apps--card">
+          <ion-icon class ="snapchat app" name="logo-snapchat"></ion-icon><p>Snapchat</p></div>
+          <div class="secondPage__apps--card">
+         <ion-icon class="app appStore" name="logo-apple-appstore"></ion-icon><p>App Store</p></div>
+          
+        </div>
+        <div class="pageToggle"> 
+          <div class="pageToggle__circle" id="pageOne"></div>
+          <div class="pageToggle__circle active" id="pageTwo"></div>
+        </div>
+        <div class="secondPage__footer">
+          <div class="secondPage__apps--card">
+          <ion-icon class="phone app" name="call"></ion-icon><p></p></div>
+          <div class="secondPage__apps--card">
+          <ion-icon class="google app" name="logo-google"></ion-icon><p></p></div>
+          <div class="secondPage__apps--card">
+          <ion-icon class="insta app" name="logo-instagram"></ion-icon><p></p></div>
+          <div class="secondPage__apps--card">
+          <ion-icon class="itunes app" name="musical-notes"></ion-icon><p></p></div>
+
         </div>
       </div>
     </main>

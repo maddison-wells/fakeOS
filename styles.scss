@@ -1,5 +1,7 @@
 @import "partials/_main.scss";
 @import "partials/firstPage";
+@import "partials/apps";
+@import "partials/secondPage";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap");
 
 * {
@@ -37,7 +39,6 @@
       content: "";
       position: absolute;
       left: -20px;
-      /* background-color: #e2b64f; */
       top: 0;
       height: 20px;
       width: 20px;

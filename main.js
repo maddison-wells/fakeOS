@@ -114,7 +114,14 @@ document.getElementById(
 
 // clickToOpen
 
-document.getElementById("onClick").addEventListener("click", function () {
-  let element = document.getElementById("onClick");
-  element.classList.add("unlock");
+document.getElementById("lockScreen").addEventListener("click", function () {
+  let element = document.getElementById("lockScreen");
+  let show = document.getElementById("firstPage");
+  element.classList.add("hide");
+  show.classList.remove("hide");
 });
+
+// document.getElementById("firstPage").addEventListener("click", function () {
+//   let element = document.getElementById("firstPage");
+//   element.classList.remove("hide");
+// });
