@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&family=Silkscreen&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&family=Silkscreen&display=swap");
 .main {
   display: flex;
   flex-direction: column;
@@ -70,6 +71,7 @@
 .firstPage__apps--card {
   text-align: center;
   flex: 1 0 25%;
+  overflow: hidden;
 }
 .firstPage__apps--card p {
   color: #fff;
@@ -77,15 +79,20 @@
   font-size: 12px;
   margin-top: 0px;
 }
+.firstPage__apps--card img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
 .firstPage__footer {
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
+  width: 400px;
   margin: 10px;
   padding: 6px 2px 5px 2px;
   border-radius: 20px;
   background-color: rgba(93, 88, 88, 0.7);
-  max-height: 55px;
+  max-height: 60px;
 }
 .firstPage__footer--card {
   flex: 1 0 25%;
@@ -95,7 +102,7 @@
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  background-color: white;
+  padding: 4px;
 }
 
 .hide {
@@ -106,10 +113,11 @@
   display: flex;
   border-radius: 20px;
   background-color: rgba(93, 88, 88, 0.7);
-  padding: 10px;
+  padding: 5px;
   gap: 10px;
-  margin-top: 140px;
+  margin-top: 116px;
   width: 50px;
+  height: 20px;
   align-items: center;
   justify-content: center;
 }
@@ -125,26 +133,10 @@
   background-color: white;
 }
 
-.messages {
-  color: white;
-  background-color: green;
-}
-
-.calculator,
-.settings,
-.camera {
-  background-color: grey;
-}
-
-.calendar {
-  color: red;
-}
-
 .secondPage {
   display: flex;
   flex-wrap: wrap;
   margin-top: 15px;
-  height: 50px;
   justify-content: center;
 }
 .secondPage__apps {
@@ -154,6 +146,7 @@
 .secondPage__apps--card {
   text-align: center;
   flex: 1 0 25%;
+  overflow: hidden;
 }
 .secondPage__apps--card p {
   color: #fff;
@@ -161,15 +154,20 @@
   font-size: 12px;
   margin-top: 0px;
 }
+.secondPage__apps--card img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
 .secondPage__footer {
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
+  width: 400px;
   margin: 10px;
   padding: 6px 2px 5px 2px;
   border-radius: 20px;
   background-color: rgba(93, 88, 88, 0.7);
-  max-height: 55px;
+  max-height: 60px;
 }
 .secondPage__footer--card {
   flex: 1 0 25%;
@@ -179,25 +177,26 @@
   width: 50px;
   height: 50px;
   border-radius: 10px;
-  background-color: white;
+  padding: 4px;
 }
 
 .hide {
   display: none;
 }
 
-.pageToggle {
+.pageToggleTwo {
   display: flex;
   border-radius: 20px;
   background-color: rgba(93, 88, 88, 0.7);
-  padding: 10px;
+  padding: 5px;
   gap: 10px;
-  margin-top: 140px;
+  margin-top: 210px;
   width: 50px;
+  height: 20px;
   align-items: center;
   justify-content: center;
 }
-.pageToggle__circle {
+.pageToggleTwo__circle {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -209,11 +208,171 @@
   background-color: white;
 }
 
+.iphoneNotes {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+}
+.notes__homepage {
+  height: 500px;
+}
+.notes__homepage h1 {
+  margin: 20px;
+}
+.notes__homepage--saved p {
+  font-weight: 200;
+}
+.notes__footer {
+  align-content: end;
+  text-align: end;
+  margin: 20px;
+}
+.notes__footer .newPage {
+  font-size: 32px;
+  color: #ffd52e;
+}
+.notes__header {
+  color: #ffd52e;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-right: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+}
+.notes__header .chevron {
+  font-size: 24px;
+}
+.notes input {
+  height: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  border: none;
+  padding: 10px;
+}
+.notes input::placeholder {
+  font-size: 30px;
+}
+.notes textarea {
+  border: none;
+  padding: 10px;
+}
+
+.customDiv {
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  margin: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.magicEight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 590px;
+  background-image: url(img/background.jpeg);
+  background-size: cover;
+  background-position: center center;
+  flex-direction: column;
+}
+.magicEight h1 {
+  color: rgb(222, 222, 102);
+  font-family: "Silkscreen", sans-serif;
+  text-align: center;
+  margin: 5px;
+}
+.magicEight__img {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+.magicEight__text {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Silkscreen", sans-serif;
+  text-align: center;
+}
+
+#shakingImage {
+  transition: transform 1s ease-in-out;
+}
+
+.shake {
+  animation: shakeAnimation 0.3s ease-in-out;
+}
+
+@keyframes shakeAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+.stopwatch {
+  background-color: black;
+  height: 600px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.stopwatch__timer {
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+}
+.stopwatch__buttons {
+  margin: 10px;
+  display: flex;
+}
+.stopwatch__buttons--stop, .stopwatch__buttons--play, .stopwatch__buttons--reset {
+  margin: 10px;
+  background-color: orange;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
 
-.iphone {
+.iphone, .iphoneNotes {
   background-color: white;
   height: 600px;
   position: relative;
@@ -293,4 +452,13 @@
 }
 .iphone__nav--left p {
   font-size: 15px;
+}
+
+.sideBySide {
+  display: flex;
+  gap: 50px;
+}
+
+.iphoneNotes {
+  background-image: none;
 }

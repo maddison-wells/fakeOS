@@ -1,0 +1,84 @@
+.iphoneNotes {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.notes {
+  display: flex;
+  flex-direction: column;
+
+  &__homepage {
+    height: 500px;
+    h1 {
+      margin: 20px;
+    }
+
+    &--saved {
+      // border-radius: 10px;
+      // background-color: #e5e5e5;
+      // margin: 20px;
+      // padding-right: 10px;
+      // padding-left: 10px;
+      // padding-bottom: 5px;
+
+      p {
+        font-weight: 200;
+      }
+    }
+  }
+  &__footer {
+    align-content: end;
+    text-align: end;
+    margin: 20px;
+    .newPage {
+      font-size: 32px;
+      color: #ffd52e;
+    }
+  }
+
+  &__header {
+    color: #ffd52e;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: 18px;
+
+    .chevron {
+      font-size: 24px;
+    }
+  }
+
+  input {
+    height: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    border: none;
+    padding: 10px;
+  }
+
+  input::placeholder {
+    font-size: 30px;
+  }
+
+  textarea {
+    border: none;
+    padding: 10px;
+  }
+}
+
+.customDiv {
+  border-radius: 10px;
+  background-color: #e5e5e5;
+  margin: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
+
+.hide {
+  display: none;
+}

@@ -121,7 +121,165 @@ document.getElementById("lockScreen").addEventListener("click", function () {
   show.classList.remove("hide");
 });
 
-// document.getElementById("firstPage").addEventListener("click", function () {
-//   let element = document.getElementById("firstPage");
-//   element.classList.remove("hide");
-// });
+// slide between page 1 and 2
+
+document
+  .getElementById("pageToggleFirst")
+  .addEventListener("click", function () {
+    let pageOne = document.getElementById("firstPage");
+    let pageTwo = document.getElementById("secondPage");
+
+    pageOne.classList.toggle("hide");
+    pageTwo.classList.toggle("hide");
+  });
+
+document
+  .getElementById("pageToggleSecond")
+  .addEventListener("click", function () {
+    let pageOne = document.getElementById("firstPage");
+    let pageTwo = document.getElementById("secondPage");
+
+    pageOne.classList.toggle("hide");
+    pageTwo.classList.toggle("hide");
+  });
+
+//.savedNotes inner HTML needs to change once Done is pressed saveNote()
+
+let title = document.getElementById("inputTitle");
+let text = document.getElementById("inputText");
+let savedNotes = document.getElementById("savedNotes");
+
+function addNewDiv() {
+  savedNotes.classList.remove("hide");
+
+  let newDiv = document.createElement("div");
+  let truncatedText =
+    text.value.length > 30 ? text.value.substring(0, 30) + "..." : text.value;
+
+  newDiv.innerHTML = `<h2>${title.value}</h2><p>${truncatedText}</p>`;
+  newDiv.classList.add("customDiv");
+  document.getElementById("savedNotes").appendChild(newDiv);
+}
+
+// document.getElementById("doneButton").addEventListener("click", addNewDiv);
+
+document.getElementById("doneButton").addEventListener("click", function () {
+  addNewDiv();
+  document.getElementById("inputTitle").value = "";
+  document.getElementById("inputText").value = "";
+});
+
+// page toggle
+
+document.getElementById("newPage").addEventListener("click", function () {
+  let pageOne = document.getElementById("homepage");
+  let pageTwo = document.getElementById("noteEdit");
+
+  pageTwo.classList.remove("hide");
+  pageOne.classList.add("hide");
+});
+
+document.getElementById("returnHome").addEventListener("click", function () {
+  let pageOne = document.getElementById("homepage");
+  let pageTwo = document.getElementById("noteEdit");
+
+  pageTwo.classList.add("hide");
+  pageOne.classList.remove("hide");
+});
+
+function getMagic8BallResponse() {
+  const randomValue = Math.floor(Math.random() * 14) + 1;
+  let response;
+
+  switch (randomValue) {
+    case 1:
+      response = "Yes, definitely";
+      break;
+    case 2:
+      response = "No, never";
+      break;
+    case 3:
+      response = "Ask again later";
+      break;
+    case 4:
+      response = "Cannot predict now";
+      break;
+    case 5:
+      response = "Don't count on it";
+      break;
+    case 6:
+      response = "You may rely on it";
+      break;
+    case 7:
+      response = "As I see it, yes.";
+      break;
+    case 8:
+      response = "Outlook not so good";
+      break;
+    case 9:
+      response = "Most likely";
+      break;
+    case 10:
+      response = "Reply hazy, try again";
+      break;
+    case 11:
+      response = "Without a doubt";
+      break;
+    case 12:
+      response = "My sources say no";
+      break;
+    case 13:
+      response = "Yes, in due time";
+      break;
+    case 14:
+      response = "Very doubtful";
+      break;
+    default:
+      response = "Invalid number. Try 1 to 14.";
+  }
+
+  const image = document.getElementById("shakingImage");
+  image.classList.add("shake");
+
+  setTimeout(() => {
+    image.classList.remove("shake");
+    document.getElementById("fortuneText").innerHTML = response;
+  }, 200);
+}
+
+document
+  .getElementById("fortuneText")
+  .addEventListener("click", getMagic8BallResponse);
+
+// Timer
+
+var sec = 0;
+var intervalId;
+function timer(value) {
+  return value > 9 ? value : "0" + value;
+}
+
+function updateTimer() {
+  document.getElementById("seconds").innerHTML = timer(++sec % 60);
+  document.getElementById("minutes").innerHTML = timer(parseInt(sec / 60, 10));
+}
+
+document.getElementById("play").addEventListener("click", function () {
+  var playButton = document.getElementById("play");
+  if (!intervalId) {
+    intervalId = setInterval(updateTimer, 1000);
+    playButton.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
+  } else {
+    clearInterval(intervalId);
+    intervalId = null;
+    playButton.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
+  }
+});
+
+document.getElementById("reset").addEventListener("click", function () {
+  clearInterval(intervalId);
+  intervalId = null;
+  sec = 0;
+  document.getElementById("seconds").innerHTML = "00";
+  document.getElementById("minutes").innerHTML = "00";
+});
