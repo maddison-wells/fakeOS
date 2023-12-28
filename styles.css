@@ -277,15 +277,17 @@
   display: none;
 }
 
+.black {
+  color: black;
+}
+
 .magicEight {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 590px;
-  background-image: url(img/background.jpeg);
-  background-size: cover;
-  background-position: center center;
   flex-direction: column;
+  background-image: inherit;
 }
 .magicEight h1 {
   color: rgb(222, 222, 102);
@@ -337,6 +339,10 @@
     transform: translateX(5px);
   }
 }
+.hide {
+  display: none;
+}
+
 .stopwatch {
   background-color: black;
   height: 600px;
@@ -366,6 +372,10 @@
   border-radius: 50px;
   width: 60px;
   height: 60px;
+}
+
+.hide {
+  display: none;
 }
 
 * {
@@ -438,6 +448,7 @@
   margin-left: 25px;
   margin-right: 25px;
   color: #fff;
+  z-index: 1;
 }
 .iphone__nav--right {
   display: flex;
@@ -461,4 +472,10 @@
 
 .iphoneNotes {
   background-image: none;
+}
+
+.addMagicBackground {
+  background-image: url(img/background.jpeg);
+  background-size: cover;
+  background-position: center center;
 }

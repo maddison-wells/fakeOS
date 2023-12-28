@@ -283,3 +283,13 @@ document.getElementById("reset").addEventListener("click", function () {
   document.getElementById("seconds").innerHTML = "00";
   document.getElementById("minutes").innerHTML = "00";
 });
+document.getElementById("magicEight").addEventListener("click", function () {
+  document.getElementById("firstPage").innerHTML =
+    '<div class="magicEight">' +
+    '<div class="magicEight__header">' +
+    "<h1>Seek Wisdom: The Magic <br>8-Ball Knows All!</h1>" +
+    "</div>" +
+    '<img id="shakingImage" class="magicEight__img" src="img/Magic_eight_ball.png" alt="magic 8 ball">' +
+    '<p id="fortuneText" class="magicEight__text">Click to shake</p>' +
+    "</div>";
+});

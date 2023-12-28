@@ -81,6 +81,7 @@
     margin-left: 25px;
     margin-right: 25px;
     color: #fff;
+    z-index: 1;
     &--right {
       display: flex;
 
@@ -108,4 +109,10 @@
 .iphoneNotes {
   @extend .iphone;
   background-image: none;
+}
+
+.addMagicBackground {
+  background-image: url(img/background.jpeg);
+  background-size: cover;
+  background-position: center center;
 }
