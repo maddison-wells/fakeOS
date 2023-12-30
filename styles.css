@@ -7,6 +7,9 @@
   color: #fff;
   height: 450px;
 }
+.main__lock {
+  font-size: 20px;
+}
 .main__lockscreen--date {
   font-weight: 300;
   font-size: 16px;
@@ -101,7 +104,7 @@
 .app {
   width: 50px;
   height: 50px;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 4px;
 }
 
@@ -131,6 +134,11 @@
 
 .active {
   background-color: white;
+}
+
+.messages img {
+  width: 60px;
+  height: 60px;
 }
 
 .secondPage {
@@ -282,18 +290,27 @@
 }
 
 .magicEight {
+  background-image: inherit;
+  background-size: cover;
+  background-position: center center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 590px;
+  height: 500px;
   flex-direction: column;
-  background-image: inherit;
+  position: relative;
 }
 .magicEight h1 {
   color: rgb(222, 222, 102);
   font-family: "Silkscreen", sans-serif;
   text-align: center;
   margin: 5px;
+}
+.magicEight i {
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 10px;
 }
 .magicEight__img {
   width: 300px;
@@ -302,7 +319,7 @@
 }
 .magicEight__text {
   position: absolute;
-  top: 60%;
+  top: 63%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -353,7 +370,7 @@
   flex-direction: column;
 }
 .stopwatch__timer {
-  font-size: 30px;
+  font-size: 90px;
   display: flex;
   flex-direction: row;
 }
@@ -478,4 +495,15 @@
   background-image: url(img/background.jpeg);
   background-size: cover;
   background-position: center center;
+}
+
+.magicEight {
+  background-image: inherit;
+  background-size: cover;
+  background-position: center center;
+}
+
+.addStopWatchBackground {
+  background-color: #000;
+  background-image: none;
 }

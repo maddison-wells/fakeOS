@@ -5,6 +5,10 @@
   color: #fff;
   height: 450px;
 
+  &__lock {
+    font-size: 20px;
+  }
+
   &__lockscreen {
     &--date {
       font-weight: 300;

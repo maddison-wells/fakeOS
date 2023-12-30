@@ -1,21 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&family=Silkscreen&display=swap");
 
 .magicEight {
+  background-image: inherit;
+  background-size: cover;
+  background-position: center center;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 590px;
-  // background-image: url(img/background.jpeg);
-  // background-size: cover;
-  // background-position: center center;
+  height: 500px;
   flex-direction: column;
-  background-image: inherit;
+  position: relative;
 
   h1 {
     color: rgb(222, 222, 102);
     font-family: "Silkscreen", sans-serif;
     text-align: center;
     margin: 5px;
+  }
+
+  i {
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 10px;
   }
 
   &__img {
@@ -26,7 +33,7 @@
 
   &__text {
     position: absolute;
-    top: 60%;
+    top: 63%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;

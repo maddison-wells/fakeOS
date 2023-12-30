@@ -117,11 +117,20 @@ document.getElementById(
 document.getElementById("lockScreen").addEventListener("click", function () {
   let element = document.getElementById("lockScreen");
   let show = document.getElementById("firstPage");
-  element.classList.add("hide");
-  show.classList.remove("hide");
+
+  setTimeout(() => {
+    document.getElementById("mainLock").innerHTML =
+      '<i class="fa-solid fa-lock-open"></i>';
+  }, 100);
+
+  setTimeout(() => {
+    element.classList.add("hide");
+
+    show.classList.remove("hide");
+  }, 800);
 });
 
-// slide between page 1 and 2
+// // slide between page 1 and 2
 
 document
   .getElementById("pageToggleFirst")
@@ -161,7 +170,7 @@ function addNewDiv() {
   document.getElementById("savedNotes").appendChild(newDiv);
 }
 
-// document.getElementById("doneButton").addEventListener("click", addNewDiv);
+// // document.getElementById("doneButton").addEventListener("click", addNewDiv);
 
 document.getElementById("doneButton").addEventListener("click", function () {
   addNewDiv();
@@ -169,7 +178,7 @@ document.getElementById("doneButton").addEventListener("click", function () {
   document.getElementById("inputText").value = "";
 });
 
-// page toggle
+// // page toggle
 
 document.getElementById("newPage").addEventListener("click", function () {
   let pageOne = document.getElementById("homepage");
@@ -185,6 +194,62 @@ document.getElementById("returnHome").addEventListener("click", function () {
 
   pageTwo.classList.add("hide");
   pageOne.classList.remove("hide");
+});
+
+// // Timer
+document.getElementById("stopwatchApp").addEventListener("click", function () {
+  firstPage.classList.add("hide");
+  document.getElementById("iphoneMain").classList.add("addStopWatchBackground");
+
+  document.getElementById("stopWatchContent").classList.remove("hide");
+});
+
+document
+  .getElementById("returnToFirstPage")
+  .addEventListener("click", function () {
+    firstPage.classList.remove("hide");
+    document
+      .getElementById("iphoneMain")
+      .classList.remove("addStopWatchBackground");
+
+    document.getElementById("stopWatchContent").classList.add("hide");
+  });
+
+var sec = 0;
+var intervalId;
+function timer(value) {
+  return value > 9 ? value : "0" + value;
+}
+
+function updateTimer() {
+  document.getElementById("seconds").innerHTML = timer(++sec % 60);
+  document.getElementById("minutes").innerHTML = timer(parseInt(sec / 60, 10));
+}
+
+document.getElementById("play").addEventListener("click", function () {
+  var playButton = document.getElementById("play");
+  if (!intervalId) {
+    intervalId = setInterval(updateTimer, 1000);
+    playButton.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
+  } else {
+    clearInterval(intervalId);
+    intervalId = null;
+    playButton.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
+  }
+});
+
+document.getElementById("reset").addEventListener("click", function () {
+  clearInterval(intervalId);
+  intervalId = null;
+  sec = 0;
+  document.getElementById("seconds").innerHTML = "00";
+  document.getElementById("minutes").innerHTML = "00";
+});
+
+document.getElementById("magicEight").addEventListener("click", function () {
+  firstPage.classList.add("hide");
+  document.getElementById("iphoneMain").classList.add("addMagicBackground");
+  document.getElementById("magicEightContent").classList.remove("hide");
 });
 
 function getMagic8BallResponse() {
@@ -239,6 +304,9 @@ function getMagic8BallResponse() {
   }
 
   const image = document.getElementById("shakingImage");
+
+  image.classList.remove("shake");
+  void image.offsetWidth;
   image.classList.add("shake");
 
   setTimeout(() => {
@@ -246,50 +314,13 @@ function getMagic8BallResponse() {
     document.getElementById("fortuneText").innerHTML = response;
   }, 200);
 }
-
-document
-  .getElementById("fortuneText")
-  .addEventListener("click", getMagic8BallResponse);
-
-// Timer
-
-var sec = 0;
-var intervalId;
-function timer(value) {
-  return value > 9 ? value : "0" + value;
-}
-
-function updateTimer() {
-  document.getElementById("seconds").innerHTML = timer(++sec % 60);
-  document.getElementById("minutes").innerHTML = timer(parseInt(sec / 60, 10));
-}
-
-document.getElementById("play").addEventListener("click", function () {
-  var playButton = document.getElementById("play");
-  if (!intervalId) {
-    intervalId = setInterval(updateTimer, 1000);
-    playButton.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
-  } else {
-    clearInterval(intervalId);
-    intervalId = null;
-    playButton.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
-  }
+// magic8 functionality
+document.getElementById("fortuneText").addEventListener("click", function () {
+  getMagic8BallResponse();
 });
 
-document.getElementById("reset").addEventListener("click", function () {
-  clearInterval(intervalId);
-  intervalId = null;
-  sec = 0;
-  document.getElementById("seconds").innerHTML = "00";
-  document.getElementById("minutes").innerHTML = "00";
-});
-document.getElementById("magicEight").addEventListener("click", function () {
-  document.getElementById("firstPage").innerHTML =
-    '<div class="magicEight">' +
-    '<div class="magicEight__header">' +
-    "<h1>Seek Wisdom: The Magic <br>8-Ball Knows All!</h1>" +
-    "</div>" +
-    '<img id="shakingImage" class="magicEight__img" src="img/Magic_eight_ball.png" alt="magic 8 ball">' +
-    '<p id="fortuneText" class="magicEight__text">Click to shake</p>' +
-    "</div>";
+document.getElementById("returnToMain").addEventListener("click", function () {
+  firstPage.classList.remove("hide");
+  document.getElementById("iphoneMain").classList.remove("addMagicBackground");
+  document.getElementById("magicEightContent").classList.add("hide");
 });
