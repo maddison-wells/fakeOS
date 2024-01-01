@@ -736,3 +736,117 @@ document
 //     "</div>";
 //   document.getElementById("iphoneMain").classList.add("addStopWatchBackground");
 // });
+
+//notes app
+
+let title = document.getElementById("inputTitle");
+let text = document.getElementById("inputText");
+let savedNotes = document.getElementById("savedNotes");
+
+function addNewDiv() {
+  savedNotes.classList.remove("hide");
+
+  let newDiv = document.createElement("div");
+  let truncatedText =
+    text.value.length > 30 ? text.value.substring(0, 30) + "..." : text.value;
+
+  newDiv.innerHTML = `<ion-icon id="pencilEdit" name="pencil-outline"></ion-icon><ion-icon id="deleteDiv" name="trash-outline"></ion-icon><h2 id="customTitle" contenteditable="true">${title.value}</h2><p id="customText" contenteditable="true">${truncatedText}</p>`;
+  newDiv.classList.add("customDiv");
+  newDiv.addEventListener("click", handleDivClick);
+
+  document.getElementById("savedNotes").appendChild(newDiv);
+}
+function handleDivClick(event) {
+  // Handle the customDiv click event here
+  // For example, you can access the clicked div's content:
+  const clickedDiv = event.currentTarget;
+  const clickedTitle = clickedDiv.querySelector("h2").textContent;
+  const clickedText = clickedDiv.querySelector("p").textContent;
+
+  const clickedDeleteButton = event.target.closest("deleteDiv");
+
+  if (clickedDeleteButton) {
+    // Delete the corresponding customDiv
+    const divToDelete = clickedDeleteButton.closest(".customDiv");
+    divToDelete.remove();
+  } else {
+    // Handle other actions when clicking on the customDiv (e.g., edit)
+    const clickedDiv = event.target.closest(".customDiv");
+  }
+
+  // Now you can use the content as needed, for instance, to fill the input areas:
+  title.value = clickedTitle;
+  text.value = clickedText;
+
+  // You can also add logic to navigate to the editNote page if needed
+  let home = document.getElementById("homepage");
+  let edit = document.getElementById("editNote");
+
+  edit.classList.remove("hide");
+  home.classList.add("hide");
+}
+
+document.getElementById("saveButton").addEventListener("click", function () {
+  if (text.value.length > 0) {
+    addNewDiv();
+    let home = document.getElementById("homepage");
+    let newNote = document.getElementById("newNote");
+
+    newNote.classList.add("hide");
+    home.classList.remove("hide");
+    document.getElementById("inputTitle").value = "";
+    document.getElementById("inputText").value = "";
+  } else {
+    document.getElementById("inputTitle").value = "";
+    document.getElementById("inputText").value = "";
+  }
+});
+
+// page toggle notes
+
+let home = document.getElementById("homepage");
+let newNote = document.getElementById("newNote");
+let edit = document.getElementById("editNote");
+
+document.getElementById("newPage").addEventListener("click", function () {
+  newNote.classList.remove("hide");
+  home.classList.add("hide");
+});
+
+document.getElementById("returnHome").addEventListener("click", function () {
+  newNote.classList.add("hide");
+  home.classList.remove("hide");
+});
+
+document
+  .getElementById("returnToCustomDivList")
+  .addEventListener("click", function () {
+    edit.classList.add("hide");
+    home.classList.remove("hide");
+  });
+// //edit
+
+// Modify the event listener for the click event on the parent element
+document
+  .getElementById("savedNotes")
+  .addEventListener("click", function (event) {
+    // Check if the clicked element has the class "pencilEdit"
+    if (event.target.classList.contains("pencilEdit")) {
+      // Handle the edit action here
+      edit.classList.remove("hide");
+      home.classList.add("hide");
+
+      // Access the values of the title and text within the clicked div
+      const clickedDiv = event.currentTarget;
+      const clickedTitle = clickedDiv.querySelector("h2").textContent;
+      const clickedText = clickedDiv.querySelector("p").textContent;
+
+      // Now you can use the content as needed
+
+      document.getElementById("editTitle").value =
+        clickedDiv.querySelector("#customTitle").textContent;
+
+      document.getElementById("editText").value =
+        clickedDiv.querySelector("#customText").textContent;
+    }
+  });

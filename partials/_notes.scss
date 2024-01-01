@@ -1,30 +1,14 @@
-.iphoneNotes {
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
 .notes {
   display: flex;
   flex-direction: column;
 
   &__homepage {
-    height: 500px;
+    height: 450px;
+    position: relative;
+    background-color: white;
+    overflow: auto;
     h1 {
       margin: 20px;
-    }
-
-    &--saved {
-      // border-radius: 10px;
-      // background-color: #e5e5e5;
-      // margin: 20px;
-      // padding-right: 10px;
-      // padding-left: 10px;
-      // padding-bottom: 5px;
-
-      p {
-        font-weight: 200;
-      }
     }
   }
   &__footer {
@@ -46,43 +30,87 @@
     margin-right: 10px;
     margin-left: 10px;
     font-size: 18px;
-
-    .chevron {
-      font-size: 24px;
-    }
   }
 
-  input {
-    height: 50px;
-    font-weight: 600;
-    font-size: 18px;
-    border: none;
-    padding: 10px;
+  //   .chevron {
+  //     font-size: 24px;
+  //   }
+  // }
+
+  //   input {
+  //     height: 50px;
+  //     font-weight: 600;
+  //     font-size: 18px;
+  //     border: none;
+  //     padding: 10px;
+  //   }
+
+  //   input::placeholder {
+  //     font-size: 30px;
+  //   }
+
+  //   textarea {
+  //     border: none;
+  //     padding: 10px;
+  //   }
+  // }
+
+  // .customDiv {
+  //   border-radius: 10px;
+  //   background-color: #e5e5e5;
+  //   margin: 10px;
+  //   padding-right: 10px;
+  //   padding-left: 10px;
+  //   padding-bottom: 5px;
+  //   display: flex;
+  //   flex-direction: column;
+  //   position: relative;
+  // }
+
+  // #pencilEdit {
+  //   position: absolute;
+  //   top: 10px;
+  //   right: 35px;
+  //   font-size: 20px;
+  // }
+
+  // #deleteDiv {
+  //   position: absolute;
+  //   top: 10px;
+  //   right: 10px;
+  //   font-size: 20px;
+  // }
+
+  .hide {
+    display: none;
   }
 
-  input::placeholder {
-    font-size: 30px;
-  }
-
-  textarea {
-    border: none;
-    padding: 10px;
+  .black {
+    color: black;
   }
 }
 
-.customDiv {
+.input-box {
   border-radius: 10px;
   background-color: #e5e5e5;
-  margin: 20px;
+  margin: 10px;
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 70px;
 }
 
-.hide {
-  display: none;
+.input-box img {
+  width: 25px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
 }
 
-.black {
-  color: black;
+.leaveNotes {
+  padding-left: 265px;
 }

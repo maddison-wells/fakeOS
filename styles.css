@@ -82,10 +82,11 @@
   font-size: 12px;
   margin-top: 0px;
 }
-.firstPage__apps--card img {
+.firstPage__apps--card .app {
   width: 50px;
   height: 50px;
-  object-fit: cover;
+  border-radius: 15px;
+  padding: 4px;
 }
 .firstPage__footer {
   display: flex;
@@ -99,13 +100,6 @@
 }
 .firstPage__footer--card {
   flex: 1 0 25%;
-}
-
-.app {
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
-  padding: 4px;
 }
 
 .hide {
@@ -137,8 +131,8 @@
 }
 
 .messages img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
 }
 
 .secondPage {
@@ -216,24 +210,18 @@
   background-color: white;
 }
 
-.iphoneNotes {
-  margin: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
 .notes {
   display: flex;
   flex-direction: column;
 }
 .notes__homepage {
-  height: 500px;
+  height: 450px;
+  position: relative;
+  background-color: white;
+  overflow: auto;
 }
 .notes__homepage h1 {
   margin: 20px;
-}
-.notes__homepage--saved p {
-  font-weight: 200;
 }
 .notes__footer {
   align-content: end;
@@ -254,39 +242,36 @@
   margin-left: 10px;
   font-size: 18px;
 }
-.notes__header .chevron {
-  font-size: 24px;
+.notes .hide {
+  display: none;
 }
-.notes input {
-  height: 50px;
-  font-weight: 600;
-  font-size: 18px;
-  border: none;
-  padding: 10px;
-}
-.notes input::placeholder {
-  font-size: 30px;
-}
-.notes textarea {
-  border: none;
-  padding: 10px;
+.notes .black {
+  color: black;
 }
 
-.customDiv {
+.input-box {
   border-radius: 10px;
   background-color: #e5e5e5;
-  margin: 20px;
+  margin: 10px;
   padding-right: 10px;
   padding-left: 10px;
   padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 70px;
 }
 
-.hide {
-  display: none;
+.input-box img {
+  width: 25px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
 }
 
-.black {
-  color: black;
+.leaveNotes {
+  padding-left: 265px;
 }
 
 .magicEight {
@@ -362,37 +347,50 @@
 
 .stopwatch {
   background-color: black;
-  height: 600px;
+  height: 500px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 .stopwatch__timer {
-  font-size: 90px;
+  font-size: 30px;
   display: flex;
   flex-direction: row;
 }
 .stopwatch__buttons {
-  margin: 10px;
+  margin: 30px;
   display: flex;
 }
-.stopwatch__buttons--stop, .stopwatch__buttons--play, .stopwatch__buttons--reset {
+.stopwatch__buttons--play {
   margin: 10px;
-  background-color: orange;
+  background-color: rgb(52, 218, 52);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 40px;
-  border-radius: 50px;
+  border-radius: 70px;
+  padding: 40px;
   width: 60px;
   height: 60px;
 }
 
 .hide {
   display: none;
+}
+
+.pauseBackground {
+  background-color: rgb(234, 22, 26);
+}
+
+#returnToFirstPage {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 15px;
 }
 
 * {
@@ -506,4 +504,13 @@
 .addStopWatchBackground {
   background-color: #000;
   background-image: none;
+}
+
+.addNotesBackground {
+  background-color: white;
+  background-image: none;
+}
+
+.addColourBlack {
+  color: black;
 }

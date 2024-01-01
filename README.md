@@ -1,13 +1,9 @@
 ### FakeOS
 
-Steps:
+A imitation of an iPhone operating system.
 
-- Build/Style interface
-- Get time to work
-- Animation on WIFI/recption bars to change
+Features:
 
-To do List
-
-Create save/edit in notes app and link to firstPage
-fix apps
-fix stopwatch style including changing button
+- Notes App
+- Magic-8 Ball App
+- Stopwatch App

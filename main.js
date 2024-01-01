@@ -152,62 +152,18 @@ document
     pageTwo.classList.toggle("hide");
   });
 
-//.savedNotes inner HTML needs to change once Done is pressed saveNote()
-
-let title = document.getElementById("inputTitle");
-let text = document.getElementById("inputText");
-let savedNotes = document.getElementById("savedNotes");
-
-function addNewDiv() {
-  savedNotes.classList.remove("hide");
-
-  let newDiv = document.createElement("div");
-  let truncatedText =
-    text.value.length > 30 ? text.value.substring(0, 30) + "..." : text.value;
-
-  newDiv.innerHTML = `<h2>${title.value}</h2><p>${truncatedText}</p>`;
-  newDiv.classList.add("customDiv");
-  document.getElementById("savedNotes").appendChild(newDiv);
-}
-
-// // document.getElementById("doneButton").addEventListener("click", addNewDiv);
-
-document.getElementById("doneButton").addEventListener("click", function () {
-  addNewDiv();
-  document.getElementById("inputTitle").value = "";
-  document.getElementById("inputText").value = "";
-});
-
-// // page toggle
-
-document.getElementById("newPage").addEventListener("click", function () {
-  let pageOne = document.getElementById("homepage");
-  let pageTwo = document.getElementById("noteEdit");
-
-  pageTwo.classList.remove("hide");
-  pageOne.classList.add("hide");
-});
-
-document.getElementById("returnHome").addEventListener("click", function () {
-  let pageOne = document.getElementById("homepage");
-  let pageTwo = document.getElementById("noteEdit");
-
-  pageTwo.classList.add("hide");
-  pageOne.classList.remove("hide");
-});
-
 // // Timer
-document.getElementById("stopwatchApp").addEventListener("click", function () {
-  firstPage.classList.add("hide");
-  document.getElementById("iphoneMain").classList.add("addStopWatchBackground");
 
+document.getElementById("stopwatchApp").addEventListener("click", function () {
+  document.getElementById("firstPage").classList.add("hide");
+  document.getElementById("iphoneMain").classList.add("addStopWatchBackground");
   document.getElementById("stopWatchContent").classList.remove("hide");
 });
 
 document
   .getElementById("returnToFirstPage")
   .addEventListener("click", function () {
-    firstPage.classList.remove("hide");
+    document.getElementById("firstPage").classList.remove("hide");
     document
       .getElementById("iphoneMain")
       .classList.remove("addStopWatchBackground");
@@ -217,6 +173,8 @@ document
 
 var sec = 0;
 var intervalId;
+var playButton = document.getElementById("play");
+
 function timer(value) {
   return value > 9 ? value : "0" + value;
 }
@@ -227,18 +185,21 @@ function updateTimer() {
 }
 
 document.getElementById("play").addEventListener("click", function () {
-  var playButton = document.getElementById("play");
   if (!intervalId) {
     intervalId = setInterval(updateTimer, 1000);
+    playButton.classList.add("pauseBackground");
     playButton.innerHTML = '<ion-icon name="pause-outline"></ion-icon>';
   } else {
     clearInterval(intervalId);
     intervalId = null;
+    playButton.classList.remove("pauseBackground");
     playButton.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
   }
 });
 
 document.getElementById("reset").addEventListener("click", function () {
+  playButton.classList.remove("pauseBackground");
+  playButton.innerHTML = '<ion-icon name="play-outline"></ion-icon>';
   clearInterval(intervalId);
   intervalId = null;
   sec = 0;
@@ -247,7 +208,7 @@ document.getElementById("reset").addEventListener("click", function () {
 });
 
 document.getElementById("magicEight").addEventListener("click", function () {
-  firstPage.classList.add("hide");
+  document.getElementById("firstPage").classList.add("hide");
   document.getElementById("iphoneMain").classList.add("addMagicBackground");
   document.getElementById("magicEightContent").classList.remove("hide");
 });
@@ -320,7 +281,58 @@ document.getElementById("fortuneText").addEventListener("click", function () {
 });
 
 document.getElementById("returnToMain").addEventListener("click", function () {
-  firstPage.classList.remove("hide");
+  document.getElementById("firstPage").classList.remove("hide");
   document.getElementById("iphoneMain").classList.remove("addMagicBackground");
   document.getElementById("magicEightContent").classList.add("hide");
+});
+
+const notesContainer = document.querySelector(".notes-container");
+const createBtn = document.querySelector(".newPage");
+let notes = document.querySelector(".input-box");
+
+function showNotes() {
+  notesContainer.innerHTML = localStorage.getItem("notes");
+}
+showNotes();
+
+function updateStorge() {
+  localStorage.setItem("notes", notesContainer.innerHTML);
+}
+
+createBtn.addEventListener("click", () => {
+  let inputBox = document.createElement("p");
+  let img = document.createElement("img");
+  inputBox.className = "input-box";
+  inputBox.setAttribute("contenteditable", "true");
+  img.src = "img/delete.png";
+  notesContainer.appendChild(inputBox).appendChild(img);
+});
+
+notesContainer.addEventListener("click", function (event) {
+  if (event.target.tagName === "IMG") {
+    event.target.parentElement.remove();
+    updateStorge();
+  } else if (event.target.tagName === "P") {
+    notes = document.querySelectorAll(".input-box");
+    notes.forEach((nt) => {
+      nt.onkeyup = function () {
+        updateStorge();
+      };
+    });
+  }
+});
+
+document.getElementById("notesApp").addEventListener("click", function () {
+  document.getElementById("firstPage").classList.add("hide");
+  document.getElementById("iphoneMain").classList.add("addNotesBackground");
+  document.getElementById("iphoneNav").classList.add("addColourBlack");
+  document.getElementById("homepage").classList.remove("hide");
+});
+
+document.getElementById("leaveNotes").addEventListener("click", function () {
+  document.getElementById("firstPage").classList.remove("hide");
+  document.getElementById("iphoneMain").classList.remove("addNotesBackground");
+  document.getElementById("iphoneNav").classList.remove("addColourBlack");
+
+  document.getElementById("homepage").classList.add("hide");
 });

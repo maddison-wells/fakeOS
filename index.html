@@ -16,7 +16,7 @@
         <div class="iphone__speaker">
           <div class="iphone__speaker--rounded"></div>
         </div>
-        <div class="iphone__nav">
+        <div class="iphone__nav" id="iphoneNav">
           <div class="iphone__nav--left">
             <p id="navTime"></p>
           </div>
@@ -57,9 +57,9 @@
            <div class="firstPage__apps--card">
           <img src="img/cameraapp.png" alt="camera app"  class="app camera" ><p>Camera</p></div>
            <div class="firstPage__apps--card">
-          <img src="img/notes-app.png" alt="notes app"  class="noteApp app"><p>Notes</p></div>
+          <img src="img/notes-app.png" alt="notes app" id="notesApp" class="noteApp app"><p>Notes</p></div>
           <div class="firstPage__apps--card">
-        <img src="img/settings.png" alt="settings app" class="settings app"><p>Settings</p></div>
+        <img src="img/setting.png" alt="settings app" class="settings app"><p>Settings</p></div>
         <div class="firstPage__apps--card">
          <img src="img/cal-app.png" alt="calendar app"  class ="calendar app" ><p>Calendar</p></div>
           <div class="firstPage__apps--card">
@@ -79,7 +79,7 @@
           <div class="firstPage__apps--card">
           <img src="img/clock.jpeg" alt="clock app" class="clock app" ><p>Clock</p></div>
         </div>
-        <div class="pageToggle" onClick="" id="pageToggleFirst"> 
+        <div class="pageToggle" id="pageToggleFirst"> 
           <div class="pageToggle__circle active" id="pageOne"></div>
           <div class="pageToggle__circle" id="pageTwo"></div>
         </div>
@@ -116,7 +116,7 @@
          <img src="img/tumblr.png" alt="tumblr app" class="app tumblr"><p>Tumblr</p></div>
           
         </div>
-        <div class="pageToggle pageToggleTwo" onClick="" id="pageToggleSecond"> 
+        <div class="pageToggle pageToggleTwo" id="pageToggleSecond"> 
           <div class="pageToggleTwo__circle" id="pageOne"></div>
           <div class="pageToggleTwo__circle active" id="pageTwo"></div>
         </div>
@@ -146,22 +146,21 @@
          
         <div class="stopwatch__timer">
            <i class="fa-regular fa-rectangle-xmark" id="returnToFirstPage"></i>
-          <h1 id="minutes"></h1><h1>:</h1><h1 id="seconds"></h1>
+          <h1 id="minutes">00</h1><h1>:</h1><h1 id="seconds">00</h1>
         </div>
      
           <div id="play" class="stopwatch__buttons--play"><ion-icon name="play-outline"></ion-icon></div>
             
-          <div id="reset" class="stopwatch__buttons--reset"><ion-icon name="refresh-outline"></ion-icon></div>
+          <div id="reset" class="stopwatch__buttons--reset"><p>RESET</p></div>
         </div>
 
-    </main>
-    <div class="sideBySide">
-    <div class="iphoneNotes">
-       
-        <div class="notes" id="homepage">
+
+        <div class="notes hide" id="homepage">
         <div class="notes__homepage">
+          <i class="fa-regular fa-rectangle-xmark leaveNotes" id="leaveNotes"></i>
           <h1>Notes</h1>
-          <div class="notes__homepage--saved hide" id="savedNotes" >
+          <div class="notes__homepage" id="savedNotes" >
+            <div class="notes-container"></div>
             
           </div>
         </div>
@@ -170,25 +169,8 @@
           <ion-icon id="newPage" class="newPage" name="create-outline"></ion-icon>
         </div>
         </div>
-      </div>
-      <div class="iphoneNotes">
-        <div class="notes hide" id="noteEdit">
-        <div class="notes__header">
-          <p id="returnHome"><ion-icon class="chevron" name="chevron-back-outline"></ion-icon>
-          </p>
-          <p id="doneButton">Done</p>
-        </div>
-        
-        <input type="text" placeholder="Title" id="inputTitle">
-        <textarea name="" id="inputText" cols="30" rows="20" placeholder="Type here"></textarea>
-     
-      </div>
-      </div>
-      
-      </div>
-   
-      </div>
 
+    </main>
   </body>
 </html>
 
